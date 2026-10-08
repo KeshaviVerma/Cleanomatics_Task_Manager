@@ -1,541 +1,217 @@
-# Task Management System
+<!-- PROJECT TITLE -->
 
-A full-stack Task Management System built as part of the Cleanomatics Full-Stack Developer Assignment.
+<h1 align="center">Task Management System</h1>
 
-The application allows users to create, view, edit, and delete tasks through a React frontend connected to a Node.js and Express.js REST API.
+<h3 align="center">
+A Full-Stack Task Management Application built with React, Node.js and Express
+</h3>
 
-## Tech Stack
+<p align="center">
 
-### Frontend
-- React.js
-- Vite
-- JavaScript
-- CSS
+<img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB"/>
+<img src="https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white"/>
+<img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"/>
+<img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white"/>
+<img src="https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white"/>
+<img src="https://img.shields.io/badge/REST%20API-02569B?style=for-the-badge&logo=fastapi&logoColor=white"/>
+<img src="https://img.shields.io/badge/CSS-1572B6?style=for-the-badge&logo=css3&logoColor=white"/>
+<img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white"/>
+<img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white"/>
 
-### Backend
-- Node.js
-- Express.js
-- CORS
-- dotenv
-
-### Storage
-- In-memory JavaScript array
-
-No external database is used, as required by the assignment.
+</p>
 
 ---
 
-## Features
+## 📌 Project Overview
 
-- Create a new task
-- View task details
-- Edit an existing task
-- Delete a task
-- Task status management
-- Task priority management
-- Due date
-- Created and updated timestamps
-- Form validation
-- Loading state
-- Empty state
-- Error handling
-- Responsive UI
-- RESTful API
-- Clean backend separation using routes, controllers, and services
+**Task Management System** is a full-stack web application developed as part of the **Cleanomatics Full-Stack Developer Assignment**.
+
+The application provides a simple and responsive interface for managing tasks. Users can create new tasks, view detailed task information, edit existing tasks, and delete tasks through an intuitive dashboard.
+
+The frontend is built using **React.js with Vite**, while the backend is implemented using **Node.js and Express.js**.
+
+The frontend communicates with the backend through a **RESTful API**.
+
+The application uses an **in-memory JavaScript array** for task storage, as required by the assignment.
 
 ---
 
-## Task Structure
+## 🎯 Problem Statement
 
-Each task contains:
+Managing multiple tasks without a centralized system can make it difficult to keep track of task status, priorities, descriptions, and deadlines.
 
-```text
-id
-title
-description
-status
-priority
-dueDate
-createdAt
-updatedAt
+Users need a simple task management interface where they can:
 
-Status values
-- pending
-- in_progress
-- completed
+- Create and organize tasks
+- Track task status
+- Assign task priorities
+- Set due dates
+- View complete task information
+- Update tasks when requirements change
+- Remove completed or unnecessary tasks
 
-Priority values
-- low
-- medium
-- high
+Therefore, this project provides a lightweight task management application with a clean, responsive interface and a structured REST API.
 
-Project Structure
-Cleanomatics Task Manager/
-│
-├── frontend/
-│   ├── src/
-│   │   ├── components/
-│   │   │   ├── EditTaskForm.jsx
-│   │   │   ├── TaskCard.jsx
-│   │   │   ├── TaskDetails.jsx
-│   │   │   └── TaskForm.jsx
-│   │   │
-│   │   ├── services/
-│   │   │   └── taskApi.js
-│   │   │
-│   │   ├── App.jsx
-│   │   ├── index.css
-│   │   └── main.jsx
-│   │
-│   ├── public/
-│   ├── package.json
-│   └── vite.config.js
-│
-├── backend/
-│   ├── src/
-│   │   ├── controllers/
-│   │   │   └── task.controller.js
-│   │   │
-│   │   ├── middleware/
-│   │   │   └── errorHandler.js
-│   │   │
-│   │   ├── routes/
-│   │   │   └── task.routes.js
-│   │   │
-│   │   ├── services/
-│   │   │   └── task.service.js
-│   │   │
-│   │   ├── app.js
-│   │   └── server.js
-│   │
-│   ├── .env
-│   ├── .env.example
-│   └── package.json
-│
-├── README.md
-└── .gitignore
+---
 
-Prerequisites
-Make sure the following are installed on your system:
-- Node.js
-- npm
-- Git
-You can verify the installations using:
-node --version
-npm --version
-git --version
+## 💡 Proposed Solution
 
-Installation and Setup
-1. Clone the Repository
-git clone <YOUR_GITHUB_REPOSITORY_URL>
+The application follows a **client-server architecture**.
 
-Navigate into the project directory:
-cd "Cleanomatics Task Manager"
+<p align="center">
 
-The project contains two separate applications:
-- frontend — React application
-- backend — Node.js/Express REST API
+🖥️ <b>React Frontend</b>
 
-Backend Setup
-Open a terminal and navigate to the backend:
-cd backend
+<br>
+⬇️
+<br>
 
-Install the dependencies:
-npm install
+🌐 <b>REST API</b>
 
-Environment Configuration
-Create a .env file inside the backend folder:
-PORT=5000
+<br>
+⬇️
+<br>
 
-A .env.example file is also included in the repository.
-Start the Backend
-For development:
-npm run dev
+⚙️ <b>Express Backend</b>
 
-The backend will run on:
-http://localhost:5000
+<br>
+⬇️
+<br>
 
-Health Check
-The backend provides a health-check endpoint:
-GET /api/health
+🧠 <b>Task Service</b>
 
-Example:
-http://localhost:5000/api/health
+<br>
+⬇️
+<br>
 
-Expected response:
-{
-  "success": true,
-  "message": "Task Manager API is running"
-}
+📦 <b>In-Memory Storage</b>
 
-Frontend Setup
-Open another terminal.
-Navigate to the frontend:
-cd frontend
+</p>
 
-Install dependencies:
-npm install
+The frontend provides reusable components for creating, viewing, editing, and deleting tasks.
 
-Start the development server:
-npm run dev
+The backend follows a structured architecture consisting of:
 
-The frontend will normally be available at:
-http://localhost:5173
+- Routes
+- Controllers
+- Services
+- Middleware
 
-Open the URL displayed in the terminal in your browser.
-REST API Documentation
-Base URL
-http://localhost:5000/api
+This separation keeps the application organized, maintainable, and easy to extend.
 
-1. Get All Tasks
-Endpoint
-GET /tasks
+---
 
-Full URL
-http://localhost:5000/api/tasks
+# ✨ Key Features
 
-Success Response
-200 OK
+## 📝 Task Creation
 
-Example:
-{
-  "success": true,
-  "data": [
-    {
-      "id": "123456789",
-      "title": "Complete assignment",
-      "description": "Finish the Cleanomatics assignment",
-      "status": "pending",
-      "priority": "high",
-      "dueDate": "2026-10-10",
-      "createdAt": "2026-10-08T17:30:00.000Z",
-      "updatedAt": "2026-10-08T17:30:00.000Z"
-    }
-  ]
-}
+Users can create tasks by providing:
 
-2. Get Task by ID
-Endpoint
-GET /tasks/:id
+| Field | Description |
+|:-----:|:------------|
+| **Title** | Task title |
+| **Description** | Detailed task information |
+| **Status** | Current task state |
+| **Priority** | Task importance |
+| **Due Date** | Task deadline |
 
-Example
-GET /api/tasks/123456789
+Title and description are required fields and are validated on the frontend and backend.
 
-Success Response
-200 OK
+---
 
-Example:
-{
-  "success": true,
-  "data": {
-    "id": "123456789",
-    "title": "Complete assignment",
-    "description": "Finish the Cleanomatics assignment",
-    "status": "pending",
-    "priority": "high",
-    "dueDate": "2026-10-10",
-    "createdAt": "2026-10-08T17:30:00.000Z",
-    "updatedAt": "2026-10-08T17:30:00.000Z"
-  }
-}
+## 👁️ Task Details
 
-Task Not Found
-If the requested task does not exist:
-404 Not Found
+Users can view complete information about an individual task, including:
 
-Example:
-{
-  "success": false,
-  "message": "Task not found"
-}
-
-3. Create a Task
-Endpoint
-POST /tasks
-
-Full URL
-http://localhost:5000/api/tasks
-
-Request Body
-{
-  "title": "Complete assignment",
-  "description": "Finish the Cleanomatics task management assignment",
-  "status": "pending",
-  "priority": "high",
-  "dueDate": "2026-10-10"
-}
-
-Required Fields
-The following fields are required:
-- title
-- description
-status, priority, and dueDate are optional.
-Default values:
-status   → pending
-priority → medium
-dueDate  → null
-
-Success Response
-201 Created
-
-Example:
-{
-  "success": true,
-  "data": {
-    "id": "123456789",
-    "title": "Complete assignment",
-    "description": "Finish the Cleanomatics task management assignment",
-    "status": "pending",
-    "priority": "high",
-    "dueDate": "2026-10-10",
-    "createdAt": "2026-10-08T17:30:00.000Z",
-    "updatedAt": "2026-10-08T17:30:00.000Z"
-  }
-}
-
-Validation Error
-If title or description is missing:
-400 Bad Request
-
-Example:
-{
-  "success": false,
-  "message": "Title and description are required"
-}
-
-4. Update a Task
-Endpoint
-PUT /tasks/:id
-
-Example
-PUT /api/tasks/123456789
-
-Request Body
-{
-  "title": "Complete assignment",
-  "description": "Finish and submit the assignment",
-  "status": "completed",
-  "priority": "high",
-  "dueDate": "2026-10-10"
-}
-
-Success Response
-200 OK
-
-The task is updated and its updatedAt timestamp is refreshed.
-Task Not Found
-404 Not Found
-
-Example:
-{
-  "success": false,
-  "message": "Task not found"
-}
-
-5. Delete a Task
-Endpoint
-DELETE /tasks/:id
-
-Example
-DELETE /api/tasks/123456789
-
-Success Response
-200 OK
-
-Example:
-{
-  "success": true,
-  "message": "Task deleted successfully"
-}
-
-Task Not Found
-404 Not Found
-
-Example:
-{
-  "success": false,
-  "message": "Task not found"
-}
-
-API Status Codes
-Operation	Success	Error
-Get all tasks	200	500
-Get task by ID	200	404
-Create task	201	400
-Update task	200	400 / 404
-Delete task	200	404
-
-
-Validation
-The application performs validation on both the frontend and backend.
-Required Fields
 - Title
 - Description
-Valid Status Values
-pending
-in_progress
-completed
+- Status
+- Priority
+- Due Date
+- Created Date
+- Last Updated Date
 
-Valid Priority Values
-low
-medium
-high
+---
 
-Invalid status or priority values result in:
-400 Bad Request
+## ✏️ Task Editing
 
-Error Handling
-The backend uses centralized error-handling middleware.
-Errors are returned in a consistent format:
+Existing tasks can be updated using the **Edit** functionality.
+
+Users can modify:
+
+- Title
+- Description
+- Status
+- Priority
+- Due Date
+
+The `updatedAt` timestamp is automatically refreshed whenever a task is modified.
+
+---
+
+## 🗑️ Task Deletion
+
+Users can delete tasks through the **Delete** action.
+
+A confirmation dialog is displayed before deletion to prevent accidental removal.
+
+---
+
+## 🔄 Task Status Management
+
+Tasks support three statuses:
+
+| Status | Description |
+|:------:|:------------|
+| `pending` | Task has not been started |
+| `in_progress` | Task is currently being worked on |
+| `completed` | Task has been completed |
+
+---
+
+## 🚨 Priority Management
+
+Tasks support three priority levels:
+
+| Priority | Description |
+|:--------:|:------------|
+| `low` | Low priority task |
+| `medium` | Normal priority task |
+| `high` | High priority task |
+
+---
+
+## ⚠️ Validation & Error Handling
+
+The application handles:
+
+- Required field validation
+- Invalid status values
+- Invalid priority values
+- Task not found errors
+- API request failures
+- Loading states
+- Empty task states
+
+The backend also uses **centralized error-handling middleware**.
+
+---
+
+# 📦 Task Data Structure
+
+Each task follows the following structure:
+
+```json
 {
-  "success": false,
-  "message": "Error message"
+  "id": "123456789",
+  "title": "Complete assignment",
+  "description": "Finish the Cleanomatics assignment",
+  "status": "pending",
+  "priority": "high",
+  "dueDate": "2026-10-10",
+  "createdAt": "2026-10-08T17:30:00.000Z",
+  "updatedAt": "2026-10-08T17:30:00.000Z"
 }
 
-The frontend displays appropriate error messages when API requests fail.
-Data Storage
-This application uses an in-memory JavaScript array for storing tasks.
-No external database is used.
-This means:
-- Tasks are available while the backend is running.
-- Restarting the backend clears the task data.
-- No MongoDB, MySQL, PostgreSQL, Firebase, or other external database is required.
-This follows the assignment requirement for in-memory storage.
-Backend Architecture
-The backend follows a simple layered architecture:
-Request
-   ↓
-Routes
-   ↓
-Controllers
-   ↓
-Services
-   ↓
-In-memory data
 
-Routes
-Responsible for defining API endpoints.
-src/routes/
-
-Controllers
-Responsible for handling HTTP requests, validation, and responses.
-src/controllers/
-
-Services
-Responsible for task-related business logic and in-memory data operations.
-src/services/
-
-Middleware
-Centralized error handling is implemented in:
-src/middleware/errorHandler.js
-
-Frontend Architecture
-The React frontend is separated into reusable components.
-App
- ├── TaskCard
- ├── TaskForm
- ├── EditTaskForm
- └── TaskDetails
-
-API communication is separated into:
-src/services/taskApi.js
-
-This keeps API logic separate from the UI components.
-UI States
-The application handles the following states:
-Loading State
-Displayed while tasks are being retrieved from the backend.
-Empty State
-Displayed when there are no tasks.
-Error State
-Displayed when loading tasks from the backend fails.
-Form Validation
-Displayed when required form fields are missing or invalid.
-Environment Variables
-Backend environment variables are stored in:
-backend/.env
-
-Example:
-PORT=5000
-
-A template is provided in:
-backend/.env.example
-
-Running the Application
-Two terminals are required.
-Terminal 1 — Backend
-cd backend
-npm install
-npm run dev
-
-Terminal 2 — Frontend
-cd frontend
-npm install
-npm run dev
-
-Then open:
-http://localhost:5173
-
-Git Workflow
-The project can be managed using Git.
-Initialize the repository:
-git init
-
-Add files:
-git add .
-
-Create the first commit:
-git commit -m "Build task management system"
-
-Add the GitHub remote:
-git remote add origin <YOUR_GITHUB_REPOSITORY_URL>
-
-Push the project:
-git branch -M main
-git push -u origin main
-
-Assignment Requirements Covered
-The implementation covers the core requirements of the Cleanomatics Full-Stack Developer Assignment:
-- React.js frontend
-- Node.js + Express.js backend
-- RESTful API
-- In-memory task storage
-- Task creation
-- Task listing
-- Task details
-- Task editing
-- Task deletion
-- Status management
-- Priority management
-- Due date
-- Request validation
-- Correct HTTP status codes
-- Centralized error handling
-- CORS
-- Environment variables
-- Reusable React components
-- Dedicated frontend API layer
-- Loading state
-- Empty state
-- Error state
-- Responsive UI
-- Routes / Controllers / Services backend separation
-- GitHub repository
-- README documentation
-- API documentation
-- .env.example
-Future Enhancements
-Possible future improvements include:
-- Search by title or description
-- Status and priority filters
-- Sorting
-- Pagination
-- Dark mode
-- Debounced search
-- Swagger API documentation
-- Persistent database storage
-These features are not required for the current implementation.
-
-Author
-Keshavi Verma
-B.Tech — Computer Science & Engineering
+---
