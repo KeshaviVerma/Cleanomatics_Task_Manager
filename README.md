@@ -340,23 +340,24 @@ let tasks = [];
 
 ### 🖥️ Dashboard
 <p align="center">
-  <img src="screenshots/dashboard.png" width="90%"/>
+  <img src="screenshots\dashboard.png" width="90%"/>
 </p>
 
 ### ➕ Create Task & ✏️ Edit Task
 <p align="center">
-  <img src="screenshots/create-task.png" width="45%"/>
-  <img src="screenshots/edit-task.png" width="45%"/>
+  <img src="screenshots\create-task.png" width="45%"/>
+  <img src="screenshots\edit-task.png" width="45%"/>
 </p>
 
 ### 👁️ Task Details & 🗑️ Delete Confirmation
 <p align="center">
-  <img src="screenshots/task-details.png" width="45%"/>
-  <img src="screenshots/delete-confirm.png" width="45%"/>
+  <img src="screenshots\task-details.png" width="45%"/>
+  <img src="screenshots\delete-confirm.png" width="45%"/>
 </p>
 
+### ⚠️ Form Validation
 <p align="center">
-  <img src="screenshots/validation.png" width="80%"/>
+  <img src="screenshots\validation.png" width="90%"/>
 </p>
 <p align="center">
   <i>Required field errors are shown when the title or description is left empty.</i>
@@ -364,7 +365,7 @@ let tasks = [];
 
 ### 🧪 GitHub
 <p align="center">
-  <img src="screenshots/github.png" width="80%"/>
+  <img src="screenshots\github.png" width="90%"/>
 </p>
 
 ---
